@@ -1,0 +1,4 @@
+read a;
+read b;
+if ((a>=b)&&(a<=b)) then write equal else skip
+
