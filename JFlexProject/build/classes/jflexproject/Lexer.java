@@ -33,13 +33,13 @@ class Lexer {
    * Translates characters to character classes
    */
   private static final String ZZ_CMAP_PACKED = 
-    "\11\0\1\12\1\5\1\45\1\45\1\6\22\0\1\12\1\17\3\0"+
-    "\1\15\1\22\1\0\1\7\1\11\1\10\1\13\1\0\1\14\1\0"+
-    "\1\4\1\2\11\3\1\43\1\44\1\21\1\16\1\20\2\0\4\1"+
-    "\2\1\10\1\1\1\13\1\4\0\1\1\1\0\1\34\2\1\1\35"+
-    "\1\33\1\41\1\1\1\36\1\26\1\1\1\25\1\37\1\1\1\42"+
-    "\1\40\1\27\1\1\1\31\1\24\1\32\2\1\1\30\3\1\1\0"+
-    "\1\23\10\0\1\45\u1fa2\0\1\45\1\45\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\udfe6\0";
+    "\11\0\1\13\1\6\1\46\1\46\1\5\22\0\1\13\1\20\3\0"+
+    "\1\16\1\23\1\0\1\10\1\12\1\11\1\14\1\0\1\15\1\0"+
+    "\1\7\1\3\11\4\1\44\1\45\1\22\1\17\1\21\2\0\32\1"+
+    "\4\0\1\1\1\0\1\35\2\1\1\36\1\34\1\42\1\1\1\37"+
+    "\1\27\1\1\1\26\1\40\1\1\1\43\1\41\1\30\1\1\1\32"+
+    "\1\25\1\33\2\1\1\31\3\1\1\0\1\24\10\0\1\46\u038a\0"+
+    "\100\2\u1bd8\0\1\46\1\46\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\uffff\0\udfe6\0";
 
   /** 
    * Translates characters to character classes
@@ -52,15 +52,16 @@ class Lexer {
   private static final int [] ZZ_ACTION = zzUnpackAction();
 
   private static final String ZZ_ACTION_PACKED_0 =
-    "\1\0\1\1\1\2\2\3\1\4\1\5\1\6\1\7"+
-    "\1\10\1\11\1\12\1\13\1\14\2\1\1\15\1\16"+
-    "\2\1\7\2\1\1\1\17\1\20\1\0\1\21\1\22"+
-    "\1\23\1\24\1\25\1\26\1\2\1\27\5\2\1\30"+
-    "\1\31\2\20\2\0\6\2\1\0\1\32\1\33\2\2"+
-    "\1\34\1\35\1\36\1\37\1\40";
+    "\1\0\1\1\1\2\1\3\2\4\1\5\1\6\1\7"+
+    "\1\10\1\11\1\12\1\13\1\14\1\15\2\1\1\16"+
+    "\1\17\2\1\7\2\1\1\1\20\1\21\1\0\1\22"+
+    "\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32"+
+    "\1\2\1\33\5\2\1\34\1\35\2\22\2\23\6\2"+
+    "\1\23\1\36\1\37\2\2\1\40\1\41\1\42\2\0"+
+    "\1\43\1\44";
 
   private static int [] zzUnpackAction() {
-    int [] result = new int[66];
+    int [] result = new int[72];
     int offset = 0;
     offset = zzUnpackAction(ZZ_ACTION_PACKED_0, offset, result);
     return result;
@@ -85,18 +86,18 @@ class Lexer {
   private static final int [] ZZ_ROWMAP = zzUnpackRowMap();
 
   private static final String ZZ_ROWMAP_PACKED_0 =
-    "\0\0\0\46\0\114\0\46\0\162\0\230\0\46\0\46"+
-    "\0\276\0\46\0\46\0\46\0\46\0\46\0\344\0\u010a"+
-    "\0\u0130\0\u0156\0\u017c\0\u01a2\0\u01c8\0\u01ee\0\u0214\0\u023a"+
-    "\0\u0260\0\u0286\0\u02ac\0\u02d2\0\46\0\u02f8\0\u031e\0\46"+
-    "\0\46\0\46\0\46\0\46\0\46\0\u0344\0\114\0\u036a"+
-    "\0\u0390\0\u03b6\0\u03dc\0\u0402\0\114\0\46\0\46\0\u0428"+
-    "\0\u044e\0\u0474\0\u049a\0\u04c0\0\u04e6\0\u050c\0\u0532\0\u0558"+
-    "\0\u057e\0\46\0\114\0\u05a4\0\u05ca\0\114\0\114\0\114"+
-    "\0\114\0\114";
+    "\0\0\0\47\0\116\0\165\0\234\0\303\0\47\0\47"+
+    "\0\352\0\u0111\0\u0138\0\47\0\47\0\47\0\47\0\u015f"+
+    "\0\u0186\0\u01ad\0\u01d4\0\u01fb\0\u0222\0\u0249\0\u0270\0\u0297"+
+    "\0\u02be\0\u02e5\0\u030c\0\u0333\0\u035a\0\47\0\u0381\0\234"+
+    "\0\u03a8\0\u03cf\0\47\0\47\0\47\0\47\0\47\0\47"+
+    "\0\47\0\u03f6\0\116\0\u041d\0\u0444\0\u046b\0\u0492\0\u04b9"+
+    "\0\116\0\47\0\u04e0\0\47\0\u0507\0\u052e\0\u0555\0\u057c"+
+    "\0\u05a3\0\u05ca\0\u05f1\0\u0618\0\u063f\0\47\0\116\0\u0666"+
+    "\0\u068d\0\116\0\116\0\116\0\u06b4\0\u063f\0\116\0\116";
 
   private static int [] zzUnpackRowMap() {
-    int [] result = new int[66];
+    int [] result = new int[72];
     int offset = 0;
     offset = zzUnpackRowMap(ZZ_ROWMAP_PACKED_0, offset, result);
     return result;
@@ -120,34 +121,43 @@ class Lexer {
 
   private static final String ZZ_TRANS_PACKED_0 =
     "\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11"+
-    "\1\12\1\13\1\10\1\14\1\15\1\16\1\17\1\20"+
-    "\1\21\1\22\1\23\1\24\1\25\1\3\1\26\1\3"+
-    "\1\27\1\30\1\31\1\32\1\3\1\33\5\3\1\34"+
-    "\1\35\50\0\3\3\20\0\17\3\5\0\2\5\46\0"+
-    "\1\36\51\0\1\37\53\0\1\40\45\0\1\41\45\0"+
-    "\1\42\45\0\1\43\51\0\1\44\46\0\1\45\23\0"+
-    "\3\3\20\0\1\3\1\46\15\3\4\0\3\3\20\0"+
-    "\15\3\1\47\1\3\4\0\3\3\20\0\5\3\1\50"+
-    "\4\3\1\51\4\3\4\0\3\3\20\0\7\3\1\52"+
-    "\7\3\4\0\3\3\20\0\12\3\1\53\4\3\4\0"+
-    "\3\3\20\0\13\3\1\54\3\3\4\0\3\3\20\0"+
-    "\14\3\1\55\2\3\21\0\1\56\27\0\5\36\1\57"+
-    "\1\60\37\36\10\61\1\62\35\61\1\0\3\3\20\0"+
-    "\2\3\1\63\14\3\4\0\3\3\20\0\2\3\1\64"+
-    "\14\3\4\0\3\3\20\0\2\3\1\65\14\3\4\0"+
-    "\3\3\20\0\10\3\1\66\6\3\4\0\3\3\20\0"+
-    "\7\3\1\67\7\3\4\0\3\3\20\0\1\70\16\3"+
-    "\10\0\1\57\40\0\10\61\1\71\35\61\10\0\1\62"+
-    "\1\72\35\0\3\3\20\0\3\3\1\73\13\3\4\0"+
-    "\3\3\20\0\6\3\1\74\10\3\4\0\3\3\20\0"+
-    "\13\3\1\75\3\3\4\0\3\3\20\0\11\3\1\76"+
-    "\5\3\4\0\3\3\20\0\16\3\1\77\4\0\3\3"+
-    "\20\0\7\3\1\100\7\3\3\0\10\61\1\71\1\72"+
-    "\34\61\1\0\3\3\20\0\7\3\1\101\7\3\4\0"+
-    "\3\3\20\0\7\3\1\102\7\3\3\0";
+    "\1\12\1\13\1\14\1\7\1\15\1\16\1\17\1\20"+
+    "\1\21\1\22\1\23\1\24\1\25\1\26\1\3\1\27"+
+    "\1\3\1\30\1\31\1\32\1\33\1\3\1\34\5\3"+
+    "\1\35\1\36\51\0\1\3\1\0\2\3\20\0\17\3"+
+    "\5\0\1\4\45\0\1\37\1\0\2\40\20\0\17\37"+
+    "\4\0\1\37\1\0\2\6\20\0\17\37\12\0\1\41"+
+    "\50\0\1\42\46\0\1\43\54\0\1\44\46\0\1\45"+
+    "\46\0\1\46\46\0\1\47\52\0\1\50\47\0\1\51"+
+    "\23\0\1\3\1\0\2\3\20\0\1\3\1\52\15\3"+
+    "\4\0\1\3\1\0\2\3\20\0\15\3\1\53\1\3"+
+    "\4\0\1\3\1\0\2\3\20\0\5\3\1\54\4\3"+
+    "\1\55\4\3\4\0\1\3\1\0\2\3\20\0\7\3"+
+    "\1\56\7\3\4\0\1\3\1\0\2\3\20\0\12\3"+
+    "\1\57\4\3\4\0\1\3\1\0\2\3\20\0\13\3"+
+    "\1\60\3\3\4\0\1\3\1\0\2\3\20\0\14\3"+
+    "\1\61\2\3\22\0\1\62\30\0\1\37\1\0\2\37"+
+    "\20\0\17\37\3\0\5\41\1\63\1\64\40\41\11\65"+
+    "\1\66\35\65\1\0\1\3\1\0\2\3\20\0\2\3"+
+    "\1\67\14\3\4\0\1\3\1\0\2\3\20\0\2\3"+
+    "\1\70\14\3\4\0\1\3\1\0\2\3\20\0\2\3"+
+    "\1\71\14\3\4\0\1\3\1\0\2\3\20\0\10\3"+
+    "\1\72\6\3\4\0\1\3\1\0\2\3\20\0\7\3"+
+    "\1\73\7\3\4\0\1\3\1\0\2\3\20\0\1\74"+
+    "\16\3\11\0\1\64\40\0\11\65\1\75\35\65\11\0"+
+    "\1\66\1\76\35\0\1\3\1\0\2\3\20\0\3\3"+
+    "\1\77\13\3\4\0\1\3\1\0\2\3\20\0\6\3"+
+    "\1\100\10\3\4\0\1\3\1\0\2\3\20\0\13\3"+
+    "\1\101\3\3\4\0\1\3\1\0\2\3\20\0\11\3"+
+    "\1\102\5\3\4\0\1\3\1\0\2\3\20\0\16\3"+
+    "\1\103\4\0\1\3\1\0\2\3\20\0\7\3\1\104"+
+    "\7\3\3\0\11\105\1\106\1\76\34\105\1\0\1\3"+
+    "\1\0\2\3\20\0\7\3\1\107\7\3\4\0\1\3"+
+    "\1\0\2\3\20\0\7\3\1\110\7\3\3\0\11\105"+
+    "\1\106\35\105";
 
   private static int [] zzUnpackTrans() {
-    int [] result = new int[1520];
+    int [] result = new int[1755];
     int offset = 0;
     offset = zzUnpackTrans(ZZ_TRANS_PACKED_0, offset, result);
     return result;
@@ -185,12 +195,12 @@ class Lexer {
   private static final int [] ZZ_ATTRIBUTE = zzUnpackAttribute();
 
   private static final String ZZ_ATTRIBUTE_PACKED_0 =
-    "\1\0\1\11\1\1\1\11\2\1\2\11\1\1\5\11"+
-    "\16\1\1\11\1\1\1\0\6\11\10\1\2\11\1\1"+
-    "\2\0\6\1\1\0\1\11\10\1";
+    "\1\0\1\11\4\1\2\11\3\1\4\11\16\1\1\11"+
+    "\1\1\1\0\2\1\7\11\10\1\1\11\1\1\1\11"+
+    "\11\1\1\11\6\1\2\0\2\1";
 
   private static int [] zzUnpackAttribute() {
-    int [] result = new int[66];
+    int [] result = new int[72];
     int offset = 0;
     offset = zzUnpackAttribute(ZZ_ATTRIBUTE_PACKED_0, offset, result);
     return result;
@@ -293,7 +303,7 @@ public static int lineNum2=0;
     char [] map = new char[0x110000];
     int i = 0;  /* index in packed string  */
     int j = 0;  /* index in unpacked array */
-    while (i < 166) {
+    while (i < 162) {
       int  count = packed.charAt(i++);
       char value = packed.charAt(i++);
       do map[j++] = value; while (--count > 0);
@@ -588,108 +598,129 @@ public static int lineNum2=0;
       else {
         switch (zzAction < 0 ? zzAction : ZZ_ACTION[zzAction]) {
           case 1: 
-            { return("");
+            { symbolNum+=yylength(); return ("ERROR:INVALID STRING("+yytext()+","+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
-          case 33: break;
+          case 37: break;
           case 2: 
             { symbolNum+=yylength(); return ("Var(\""+yytext()+"\","+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
-          case 34: break;
-          case 3: 
-            { symbolNum+=yylength(); return ("Num("+yytext()+","+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
-            }
-          case 35: break;
-          case 4: 
-            { symbolNum+=yylength(); return ("Op(Devision,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
-            }
-          case 36: break;
-          case 5: 
-            { symbolNum= (-1); lineNum+=1;
-            }
-          case 37: break;
-          case 6: 
-            { symbolNum+=yylength();
-            }
           case 38: break;
-          case 7: 
-            { symbolNum+=yylength(); return ("Parenthesis(Open,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+          case 3: 
+            { symbolNum+=yylength(); return ("ERROR: RUSSIAN STRING IN CODE("+yytext()+","+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
           case 39: break;
-          case 8: 
-            { symbolNum+=yylength(); return ("Op(Multiply,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+          case 4: 
+            { symbolNum+=yylength(); return ("Num("+yytext()+","+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
           case 40: break;
-          case 9: 
-            { symbolNum+=yylength(); return ("Parenthesis(Close,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+          case 5: 
+            { symbolNum+=yylength();
             }
           case 41: break;
-          case 10: 
-            { symbolNum+=yylength(); return ("Op(Plus,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+          case 6: 
+            { symbolNum= (-1); lineNum+=1;
             }
           case 42: break;
-          case 11: 
-            { symbolNum+=yylength(); return ("Op(Minus,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+          case 7: 
+            { symbolNum+=yylength(); return ("Op(Devision,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
           case 43: break;
-          case 12: 
-            { symbolNum+=yylength(); return ("Op(Remainder,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+          case 8: 
+            { symbolNum+=yylength(); return ("Parenthesis(Open,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
           case 44: break;
-          case 13: 
-            { symbolNum+=yylength(); return ("Op(Greater,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+          case 9: 
+            { symbolNum+=yylength(); return ("Op(Multiply,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
           case 45: break;
-          case 14: 
-            { symbolNum+=yylength(); return ("Op(Less,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+          case 10: 
+            { symbolNum+=yylength(); return ("Parenthesis(Close,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
           case 46: break;
-          case 15: 
-            { symbolNum+=yylength(); return ("Colon("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+          case 11: 
+            { symbolNum+=yylength(); return ("Op(Plus,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
           case 47: break;
+          case 12: 
+            { symbolNum+=yylength(); return ("Op(Minus,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 48: break;
+          case 13: 
+            { symbolNum+=yylength(); return ("Op(Remainder,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 49: break;
+          case 14: 
+            { symbolNum+=yylength(); return ("Op(Greater,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 50: break;
+          case 15: 
+            { symbolNum+=yylength(); return ("Op(Less,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 51: break;
           case 16: 
+            { symbolNum+=yylength(); return ("Colon("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 52: break;
+          case 17: 
+            { symbolNum+=yylength(); return ("ERROR:VARIABLE CAN'T BEGIN WITH NUMBER(\""+yytext()+"\","+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 53: break;
+          case 18: 
             { symbolNum+=yylength();symbolNum2=symbolNum;
  lineNum2=lineNum;symbolNum= (-1); lineNum+=1;
  return ("EndOfLineComment("+lineNum2+","+(symbolNum2-yylength()+1)+","+symbolNum2+");");
             }
-          case 48: break;
-          case 17: 
-            { symbolNum+=yylength(); return ("Op(Equal,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
-            }
-          case 49: break;
-          case 18: 
-            { symbolNum+=yylength(); return ("Op(NotEqual,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
-            }
-          case 50: break;
-          case 19: 
-            { symbolNum+=yylength(); return ("Op(GreaterOrEqual,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
-            }
-          case 51: break;
-          case 20: 
-            { symbolNum+=yylength(); return ("Op(LessOrEqual,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
-            }
-          case 52: break;
-          case 21: 
-            { symbolNum+=yylength(); return ("Op(And,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
-            }
-          case 53: break;
-          case 22: 
-            { symbolNum+=yylength(); return ("Op(Or,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
-            }
           case 54: break;
-          case 23: 
-            { symbolNum+=yylength(); return ("Kw_If("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+          case 19: 
+            { String s=yytext();
+                        String sArr[]=s.split("\n");
+                        lineNum+=(sArr.length -1);
+                        if(sArr.length>1){symbolNum=(sArr[sArr.length -1]).length();}
+                        else{symbolNum+=(sArr[sArr.length -1]).length();}
+                        return ("ERROR: UNCLOSED TraditionalComment("+lineNum+");");
             }
           case 55: break;
-          case 24: 
-            { symbolNum+=yylength(); return ("Kw_Do("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+          case 20: 
+            { symbolNum+=yylength(); return ("Op(Exponentiation,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
           case 56: break;
-          case 25: 
-            { symbolNum+=yylength(); return ("Assign("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+          case 21: 
+            { symbolNum+=yylength(); return ("Op(Equal,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
           case 57: break;
+          case 22: 
+            { symbolNum+=yylength(); return ("Op(NotEqual,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 58: break;
+          case 23: 
+            { symbolNum+=yylength(); return ("Op(GreaterOrEqual,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 59: break;
+          case 24: 
+            { symbolNum+=yylength(); return ("Op(LessOrEqual,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 60: break;
+          case 25: 
+            { symbolNum+=yylength(); return ("Op(And,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 61: break;
           case 26: 
+            { symbolNum+=yylength(); return ("Op(Or,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 62: break;
+          case 27: 
+            { symbolNum+=yylength(); return ("Kw_If("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 63: break;
+          case 28: 
+            { symbolNum+=yylength(); return ("Kw_Do("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 64: break;
+          case 29: 
+            { symbolNum+=yylength(); return ("Assign("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
+            }
+          case 65: break;
+          case 30: 
             { String s=yytext();
                         String sArr[]=s.split("\n");
                         lineNum+=(sArr.length -1);
@@ -697,31 +728,31 @@ public static int lineNum2=0;
                         else{symbolNum+=(sArr[sArr.length -1]).length();}
                         return ("TraditionalComment("+lineNum+");");
             }
-          case 58: break;
-          case 27: 
+          case 66: break;
+          case 31: 
             { symbolNum+=yylength(); return ("Kw_Skip("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
-          case 59: break;
-          case 28: 
+          case 67: break;
+          case 32: 
             { symbolNum+=yylength(); return ("Kw_Read("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
-          case 60: break;
-          case 29: 
+          case 68: break;
+          case 33: 
             { symbolNum+=yylength(); return ("Kw_Then("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
-          case 61: break;
-          case 30: 
+          case 69: break;
+          case 34: 
             { symbolNum+=yylength(); return ("Kw_Else("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
-          case 62: break;
-          case 31: 
+          case 70: break;
+          case 35: 
             { symbolNum+=yylength(); return ("Kw_Write("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
-          case 63: break;
-          case 32: 
+          case 71: break;
+          case 36: 
             { symbolNum+=yylength(); return ("Kw_While("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");
             }
-          case 64: break;
+          case 72: break;
           default:
             zzScanError(ZZ_NO_MATCH);
         }

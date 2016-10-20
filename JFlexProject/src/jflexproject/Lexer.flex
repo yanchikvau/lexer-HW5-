@@ -4,17 +4,21 @@ package jflexproject;
 %class Lexer
 %type String
 L = [a-zA-Z_]
+RL = [à-ÿÀ-ß] 
 D = [0-9]
 Dd = [1-9]
 
 Variable = {L}({L}|{D})*
+WrongVariable = {D}{D}*{L}({L}|{D})*
+RussianString = {RL}({RL})*
 Number ={D} |({Dd}{D}*)
-LineComment = "//"({L}|{D})*([\n]|[EOF])
+
  LineTerminator = \r|\n|\r\n
     InputCharacter = [^\r\n]
    EndOfLineComment     = "//" {InputCharacter}* {LineTerminator}?
 
 TraditionalComment   = "(*" [^*] ~"*)" | "(*" "*"+ ")"
+UnclosedTraditionalComment = "(*" [^*] ~"*"|"(*" [^*]*  | "(*" "*"+ | "(*"
 
 WHITE=[ \t\r]
 %{
@@ -38,6 +42,13 @@ public static int lineNum2=0;
                         if(sArr.length>1){symbolNum=(sArr[sArr.length -1]).length();}
                         else{symbolNum+=(sArr[sArr.length -1]).length();}
                         return ("TraditionalComment("+lineNum+");");}
+{UnclosedTraditionalComment} { String s=yytext();
+                        String sArr[]=s.split("\n");
+                        lineNum+=(sArr.length -1);
+                        if(sArr.length>1){symbolNum=(sArr[sArr.length -1]).length();}
+                        else{symbolNum+=(sArr[sArr.length -1]).length();}
+                        return ("ERROR: UNCLOSED TraditionalComment("+lineNum+");");}
+
 "+" {symbolNum+=yylength(); return ("Op(Plus,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");}
 "-" {symbolNum+=yylength(); return ("Op(Minus,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");}
 "**" {symbolNum+=yylength(); return ("Op(Exponentiation,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");}
@@ -67,7 +78,8 @@ public static int lineNum2=0;
 ")" {symbolNum+=yylength(); return ("Parenthesis(Close,"+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");}
 ";" {symbolNum+=yylength(); return ("Colon("+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");}
 
-  
+  {WrongVariable} {symbolNum+=yylength(); return ("ERROR:VARIABLE CAN'T BEGIN WITH NUMBER(\""+yytext()+"\","+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");}
  {Number} {symbolNum+=yylength(); return ("Num("+yytext()+","+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");}
 {Variable} {symbolNum+=yylength(); return ("Var(\""+yytext()+"\","+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");}
-. {return("");}
+{RussianString} {symbolNum+=yylength(); return ("ERROR: RUSSIAN STRING IN CODE("+yytext()+","+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");}
+. {symbolNum+=yylength(); return ("ERROR:INVALID STRING("+yytext()+","+lineNum+","+(symbolNum-yylength()+1)+","+symbolNum+");");}

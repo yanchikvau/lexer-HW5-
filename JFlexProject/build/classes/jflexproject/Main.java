@@ -26,8 +26,8 @@ public class Main {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-         String path = "C:/Users/Админ/Documents/NetBeansProjects/JFlexProject/src/jflexproject/Lexer.flex";
-       // String path = "Lexer.flex";
+        // String path = "C:/Users/Админ/Documents/NetBeansProjects/JFlexProject/src/jflexproject/Lexer.flex";
+       String path = "Lexer.flex";
        generarLexer(path);
         lexemWriter();
         
